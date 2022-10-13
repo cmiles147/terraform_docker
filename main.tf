@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     docker = {
-      source  = "kreuzwerker/docker" 
-      version = "~> 2.22.0"
+      source  = "terraform-providers/docker" 
+      version = "~> 2.7.2"
         
     }
   }
@@ -10,3 +10,6 @@ terraform {
 
 provider "docker" {}
 
+resource "docker_image" "nodered_image" {
+  name = "nodered/node-red:latest"
+}
